@@ -13,7 +13,4 @@ class PagesController extends Controller
             'messages' => $messages,
             ]);    
         }
-
-   
-    
 }

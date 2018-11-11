@@ -13,6 +13,25 @@
         </ul>
     </nav>
     </div>    
+<div class="row">
+        <form action="/messages/create" method="post" novalidate>
+            <div class="form-group @if($errors->has('message')) was-validated @endif">
+            {{ csrf_field() }}
+            <input type="text" name="message" class="form-control" placeholder="Qué estas pensando?" required />
+            @if ($errors->has('message'))
+                @foreach($errors->get('message') as $error)
+                    <div class="invalid-feedback">{{ $error }}</div>
+                @endforeach
+            @endif
+            </div>
+        </form>
+</div>
+
+
+
+
+
+
     <div class="row">
         @forelse ($messages as $message)
             <div class="col-6">
